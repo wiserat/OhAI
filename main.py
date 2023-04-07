@@ -1,33 +1,15 @@
-import openai, os;
+#!/usr/bin/env python3
 
-openai.api_key_path = ".env"
-model_engine = "gpt-3.5-turbo-0301"
+from chat import conversaton_handler # Import the function that talks with gpt-3.5-turbo
+from ohbot import * # Import the modified ohbot library
+import sys
 
+def main():
+    lang = sys.argv[-1] # Get the language
+    prompt = input("User: ") # This will be used to generate the response for the user
+    answer = conversaton_handler(prompt) # Generate the response from the user
+    print(answer) # Print the answer for debuging lol
+    say(answer, lang, soundDelay=0.1) # Make the ohbot talk
 
-def chat_query(prompt):
-    completions = openai.ChatCompletion.create(
-        model=model_engine,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=2048,
-        n=1,
-        temperature=0.5,
-    )
-
-    message = completions.choices[0].message.content
-    return message
-
-def conversaton_handler(prompt):
-    response = chat_query(prompt)
-    return response
-
-
-from ohbot import *
-
-lang = input("What language do you want to use: ")
-
-while True:
-    prompt = input("User: ")
-    answer = conversaton_handler(prompt)
-    print(answer)
-    say(answer, lang)
-    wait(2)
+if __name__ == "__main__":
+    main()

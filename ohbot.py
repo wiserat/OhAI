@@ -171,8 +171,8 @@ def say(text, lang,untilDone = True, lipSync=True, hdmiAudio = False, soundDelay
     subprocess.call(bashcommand,shell=True)
     
     
-    tts = gTTS(text, lang=lang)
-    tts.save("ohbotspeech.wav")
+    tts = gTTS(text, lang=lang) # Change by ThatBlokeJosh to the ohbot library, swapped festival for gTTS for ease of use
+    tts.save("ohbotspeech.wav") # Overwrite the file
     
     # Open the text file containing the phonemes
     f = open("phonemes",'r')
@@ -233,8 +233,8 @@ def limit(val):
         return val
 
 # Function to play back the speech wav file, if hmdi audio is being used play silence before speech sound
-def saySpeech(addSilence):
-    os.system("mpv ohbotspeech.wav")   
+def saySpeech(addSilence): 
+    os.system("mpv ohbotspeech.wav") # Change by ThatBlokeJosh: aplay to mpv for audio playback, subject to change
 # Function to move Ohbot's lips in time with speech. Arguments | phonemes → list of phonemes[] | waits → list of waits[]
 def moveSpeech(phonemes, times):
     startTime = time.time()
@@ -254,7 +254,7 @@ def moveSpeech(phonemes, times):
     move(BOTTOMLIP,5)
             
 # Function mapping phonemes to top lip positions. Argument | val → phoneme | returns a position as int
-def phonememapTop(val):
+def phonememapTop(val): # To be adjusted
     return {
         'p': 5,
         'b': 5,
@@ -300,7 +300,7 @@ def phonememapTop(val):
 }.get(val, 5)
 
 # Function mapping phonemes to lip positions. Argument | val → phoneme | returns a position as int
-def phonememapBottom(val):
+def phonememapBottom(val): # To be changed
     return {
         'p': 5,
         'b': 5,

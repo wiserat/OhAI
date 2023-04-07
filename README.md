@@ -7,7 +7,7 @@
 **1. Git clone the repo** :sheep:
 
 ```bash
-git clone https://github.com/ThatBlokeJosh/Ohbot.git
+git clone https://github.com/ThatBlokeJosh/OhAI.git
 ```
 
 **2. Add privileges to setup.sh** :imp:
@@ -39,7 +39,8 @@ vim .env
 *Make sure you are in root by using the su root command and not sudo su*
 
 ```bash
-python3 main.py
+chmod +x run.sh
+./run.sh
 ```
 
 **7. Have fun with your new freaky assistant** :partying_face:
@@ -53,3 +54,5 @@ python3 main.py
 - [ ] Add animations
 
 - [ ] Atempt to add streaming
+
+*Made by [ThatBlokeJosh](https://github.com/ThatBlokeJosh), colaborators: [wiserat](https://github.com/wiserat)*
