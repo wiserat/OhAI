@@ -64,7 +64,7 @@ while True:
             elif name == "jonas":
                 say("Here comes the ladies man")
             elif name == "sasa":
-                say("Russian invasion!")
+                say("ain't no lolis in here")
             elif name == "marko":
                 say("highly unproductive individual")
         
