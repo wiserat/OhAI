@@ -42,15 +42,21 @@ while True:
         
         #if nothing changed, don't move
         if bottom == bottom_last and left == left_last:
+            bottom = bottom_last
+            left = left_last
             break
         #if face location changed a bit just move eyes
         elif bottom + 1 == bottom_last or bottom - 1 == bottom_last or bottom == bottom_last and left + 1 == left_last or left - 1 == left_last or left == left_last:
             move(EYETILT, bottom)
             move(EYETURN, left)
+            bottom = bottom_last
+            left = left_last
         #if face location changed a lot move head
         else:
             move(HEADNOD, bottom)
             move(HEADTURN, left)
+            move(EYETILT, 5)
+            move(EYETURN, 5)
             
         #match face with known faces
         matches = fr.compare_faces(known_face_encodings, face_encoding)
@@ -65,8 +71,6 @@ while True:
                 say("Here comes the ladies man")
             elif name == "sasa":
                 say("ain't no lolis in here")
-            elif name == "marko":
-                say("highly unproductive individual")
         
         #blink so ohbot won't have dryass creepy red eyes
         to_blink += 1
