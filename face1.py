@@ -63,6 +63,8 @@ while True:
                 say("Don't run away Josh, I'm about to suck your toes, yummy")
             elif name == "jonas":
                 say("Here comes the ladies man")
+            elif name == "sasa":
+                say("Russian invasion!")
         
         #blink so ohbot won't have dryass creepy red eyes
         to_blink += 1
