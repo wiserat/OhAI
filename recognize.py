@@ -11,7 +11,6 @@ def recognize(name, lang):
         text = recognizer.recognize_google(audio, language=lang)
         text = text.lower()
     
-    if text.startswith(name.lower()):
-        text = text.replace(f"{name.lower()} ", '')
+    if text.__contains__(name.lower()):
         print(text)
         return text

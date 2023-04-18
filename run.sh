@@ -1,3 +1,4 @@
+sudo chmod 666 /dev/ttyACM0
 chmod +x main.py # Give the python file execute rights
 echo -n "Enter language: " # Enter the language for the tts
 read lang
