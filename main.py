@@ -8,6 +8,7 @@ import sys
 def main():
     lang = sys.argv[-1] # Get the language
     if lang == "cs":
+        prompt = "hello"
         prompt = recognize("Davide", lang)
         prompt += " Say the answer in Czech"
     elif lang == "en":
@@ -18,4 +19,4 @@ def main():
     say(answer, lang) # Make the ohbot talk
 
 if __name__ == "__main__":
-    main()
+   main()
