@@ -48,4 +48,4 @@ chmod +x run.sh
 
 - [ ] Atempt to add streaming
 
-*Made by [ThatBlokeJosh](https://github.com/ThatBlokeJosh), colaborators: [wiserat](https://github.com/wiserat)*
+*Made by [wiserat](https://github.com/wiserat)*
